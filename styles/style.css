@@ -28,7 +28,7 @@ h1, h2{
 }
 
 h1{
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 }
 
 h2{
@@ -37,6 +37,11 @@ h2{
 
 p{
     font-size: 1.2rem;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
 }
 
 header{
@@ -79,6 +84,39 @@ header{
     margin: 4px 0 0;
     width: 96px;
     height: 25.26px;
+}
+
+.resistor-body{
+    background-color: #cbcb57;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    border: 1px solid #000;
+    width: 96px;
+    height: 32px;
+}
+
+#resistor-three-band-modify, #resistor-four-band-modify, #resistor-five-band-modify{
+    display: flex;
+    align-items: center;
+    margin: 48px 0 0;
+}
+
+.left-terminal, .right-terminal{
+    border: 1px solid #000;
+    background-color: #ddd;
+    width: 80px;
+    height: 8px;
+}
+
+.band-1, .band-2, .band-3, .band-4, .band-5{
+    background-color: #101016;
+    width: 8px;
+    height: 100%;
+}
+
+#result-three-band, #result-four-band, #result-five-band{
+    margin: 48px 0 0;
 }
 
 footer{
