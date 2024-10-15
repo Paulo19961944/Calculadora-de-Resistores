@@ -1,6 +1,5 @@
-// DEFINE O CONTADOR E O QUERY SELECTOR
+// DEFINE O QUERY SELECTOR
 let $ = document.querySelector.bind(document);
-let count = 0;
 
 // DEFINE AS BANDAS DO RESISTOR
 const bandOne = $('.band-1');
@@ -8,6 +7,11 @@ const bandTwo = $('.band-2');
 const bandThree = $('.band-3');
 const bandFour = $('.band-4');
 const bandFive = $('.band-5');
+
+// CAPTURA OS RESULTADOS
+const resultThreeBand = $('#result-three-band');
+const resultFourBand = $('#result-four-band');
+const resultFiveBand = $('#result-four-band');
 
 // CORES DO RESISTOR
 const colors = [
@@ -25,45 +29,44 @@ const colors = [
     'linear-gradient(220deg, #707070 0%, #f1c40f 40%, #d4ac0d 100%)'
 ];
 
-// CONTADOR PARA AS CORES
-const countColors = () => {
-    count++;
-    if (count > colors.length - 1) {
-        count = 0;
-    }
-};
+// CONTADORES PARA AS CORES
+let countOne = 0;
+let countTwo = 0;
+let countThree = 0;
+let countFour = 0;
+let countFive = 0;
 
 // MUDA A COR
-const changeColor = () =>{
-    bandOne.style.background = colors[count];
-}
+const changeColor = (band, count) => {
+    band.style.background = colors[count];
+};
 
-// PRIMEIRA BANDA
+// MUDA A COR DA PRIMEIRA BANDA
 bandOne.addEventListener('click', () => {
-    countColors();
-    changeColor();
+    countOne = (countOne + 1) % colors.length; // Incrementa e reseta
+    changeColor(bandOne, countOne);
 });
 
-// SEGUNDA BANDA
+// MUDA A COR DA SEGUNDA BANDA
 bandTwo.addEventListener('click', () => {
-    countColors();
-    changeColor();
+    countTwo = (countTwo + 1) % colors.length; // Incrementa e reseta
+    changeColor(bandTwo, countTwo);
 });
 
-// TERCEIRA BANDA
+// MUDA A COR DA TERCEIRA BANDA
 bandThree.addEventListener('click', () => {
-    countColors();
-    changeColor();
+    countThree = (countThree + 1) % colors.length; // Incrementa e reseta
+    changeColor(bandThree, countThree);
 });
 
-// QUARTA BANDA
+// MUDA A COR DA QUARTA BANDA
 bandFour.addEventListener('click', () => {
-    countColors();
-    changeColor();
+    countFour = (countFour + 1) % colors.length; // Incrementa e reseta
+    changeColor(bandFour, countFour);
 });
 
-// QUINTA BANDA
+// MUDA A COR DA QUINTA BANDA
 bandFive.addEventListener('click', () => {
-    countColors();
-    changeColor();
+    countFive = (countFive + 1) % colors.length; // Incrementa e reseta
+    changeColor(bandFive, countFive);
 });
