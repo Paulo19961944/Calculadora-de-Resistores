@@ -110,9 +110,16 @@ header{
 }
 
 .band-1, .band-2, .band-3, .band-4, .band-5{
-    background-color: #101016;
+    background: #101016;
     width: 8px;
     height: 100%;
+}
+
+.colors{
+    background-color: #e0e0e0;
+    width: 8px;
+    height: max-content;
+    border: 1px solid #000;
 }
 
 #result-three-band, #result-four-band, #result-five-band{
