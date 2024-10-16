@@ -122,8 +122,14 @@ header{
     border: 1px solid #000;
 }
 
-#result-three-band, #result-four-band, #result-five-band{
-    margin: 48px 0 0;
+.result-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result{
+    margin: 32px 0 0;
 }
 
 footer{
@@ -142,6 +148,10 @@ footer{
     .type-resistor{
         width: 120px;
         height: 120px;
+    }
+
+    #result{
+        margin: 48px 0 0;
     }
 }
 
