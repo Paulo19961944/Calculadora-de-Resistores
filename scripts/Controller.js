@@ -1,23 +1,13 @@
 // controller.js
 const ResistorController = {
-    counts: [0, 0, 0, 0, 0], // Contadores para as bandas
+    counts: [0, 0, 0, -1, -1], // Contadores para as bandas (inicializando os índices de tolerância como -1)
 
     init: () => {
-        // Obter as referências às bandas
-        const bandOne = document.querySelector('.band-1');
-        const bandTwo = document.querySelector('.band-2');
-        const bandThree = document.querySelector('.band-3');
-        const bandFour = document.querySelector('.band-4');
-        const bandFive = document.querySelector('.band-5');
-        const bands = [bandOne, bandTwo, bandThree, bandFour, bandFive];
-
-        // Adicione os ouvintes de eventos
+        const bands = Array.from(document.querySelectorAll('.band-1, .band-2, .band-3, .band-4, .band-5'));
         bands.forEach((band, index) => {
-            if (band) {
-                band.addEventListener('click', () => {
-                    ResistorController.changeBand(index);
-                });
-            }
+            band.addEventListener('click', () => {
+                ResistorController.changeBand(index);
+            });
         });
     },
 

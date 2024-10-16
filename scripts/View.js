@@ -8,6 +8,7 @@ const ResistorView = {
         let displayValue = value;
         let unit = 'Ω';
 
+        // Formatação correta para as unidades
         if (value >= 1e6) {
             displayValue = (value / 1e6).toFixed(2);
             unit = 'MΩ';
@@ -18,7 +19,7 @@ const ResistorView = {
 
         const resultElement = document.querySelector('#result');
         if (resultElement) {
-            resultElement.textContent = `Resistência: ${displayValue}${unit} ${tolerance}`;
+            resultElement.textContent = `Resistência: ${displayValue}${unit}${tolerance}`.trim();
         }
     }
 };

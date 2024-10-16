@@ -19,11 +19,11 @@ const ResistorModel = {
         let value = 0;
 
         // Cálculo para 3 bandas
-        if (counts[2] >= 0) {
+        if (counts[2] >= 0 && counts[3] < 0) {
             value = (counts[0] * 10 + counts[1]) * Math.pow(10, counts[2]);
         }
         // Cálculo para 4 bandas
-        else if (counts[3] >= 0) {
+        else if (counts[3] >= 0 && counts[4] < 0) {
             value = (counts[0] * 10 + counts[1]) * Math.pow(10, counts[2]);
         }
         // Cálculo para 5 bandas
@@ -31,14 +31,14 @@ const ResistorModel = {
             value = (counts[0] * 100 + counts[1] * 10 + counts[2]) * Math.pow(10, counts[3]);
         }
 
-        return value;
+        return value; // Retorne o valor bruto para formatação posterior
     },
 
     calculateTolerance: (counts) => {
         if (counts[4] === 10 || counts[3] === 10) {
-            return '±10%'; // Prateado
+            return ' ±10%'; // Prateado
         } else if (counts[4] === 11 || counts[3] === 11) {
-            return '±5%'; // Dourado
+            return ' ±5%'; // Dourado
         }
         return '';
     }
