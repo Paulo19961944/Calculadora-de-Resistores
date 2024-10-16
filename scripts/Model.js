@@ -17,7 +17,6 @@ const colors = [
 const ResistorModel = {
     calculateResistance: (counts) => {
         let value = 0;
-        let multiplier = 1;
 
         // Cálculo para 3 bandas
         if (counts[2] >= 0) {
